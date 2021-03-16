@@ -1,1 +1,10 @@
-App works!
+<div>
+  <label for="file-upload" class="file-upload">Upload a dataset</label>
+    <input
+      id="file-upload"
+      type="file"
+      accept=".csv, .xls, .xlsx"
+      name="files[]"
+      (change)="onFileChange($event)"
+    />
+</div>
