@@ -1,10 +1,17 @@
-<div>
-  <label for="file-upload" class="file-upload">Upload a dataset</label>
-    <input
-      id="file-upload"
-      type="file"
-      accept=".csv, .xls, .xlsx"
-      name="files[]"
-      (change)="onFileChange($event)"
-    />
+<div class="content">
+  <div class="item">
+    <div>
+      <label for="file-upload" class="custom-button">Upload a dataset</label>
+        <input
+          id="file-upload"
+          type="file"
+          accept=".xls, .xlsx"
+          name="files[]"
+          (change)="onFileChange($event)"
+        />
+    </div>
+    <div>
+      <label class="custom-button" (click)="saveXML()">save XML</label>
+    </div>
+  </div>
 </div>

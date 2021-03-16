@@ -4,6 +4,8 @@ import * as XLSX from "xlsx";
 
 import { toXML } from 'jstoxml';
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -13,8 +15,6 @@ export class AppComponent {
   title = 'lims-xls-to-xml';
 
   statusMessage = "";
-  xlsArray = [];
-  xmlArray: any;
 
   onFileChange($event: any) {
     const target: DataTransfer = <DataTransfer>($event.target);
@@ -29,10 +29,7 @@ export class AppComponent {
       const wsname: string = wb.SheetNames[0];
       const ws: XLSX.WorkSheet = wb.Sheets[wsname];
 
-      this.xlsArray = XLSX.utils.sheet_to_json(ws, {header: 1});
-      console.log("xls: ", this.xlsArray);
-      this.xmlArray = toXML(this.xlsArray);
-      console.log('xml: ', this.xmlArray);
+      this.translateXLS(XLSX.utils.sheet_to_json(ws, {header: 1}));
     }
     reader.onerror = (err) => {
       this.statusMessage = 'Problem loading file';
@@ -40,5 +37,12 @@ export class AppComponent {
       reader.abort();
     }
     reader.readAsBinaryString(target.files[0]);
+  }
+
+  translateXLS(xls: any): void {
+  }
+
+  saveXML(): void {
+    console.log("SAVE!");
   }
 }

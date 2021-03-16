@@ -1,15 +1,32 @@
+
+.content {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    background: gainsboro;
+    place-items: center;
+    height: 100vh;
+}
+
+.item {
+    display: grid;
+    place-items: center;
+}
+
 input[type="file"] {
     display: none;
 }
 
-.file-upload {
+.custom-button {
     border-radius: 3px;
     display: inline-block;
     padding: .5rem 1rem;
     cursor: pointer;
     color: black;
+    width: 200px;
+    text-align: center;
 }
 
-.file-upload:hover {
+.custom-button:hover {
     background-color: lightgray;
 }
