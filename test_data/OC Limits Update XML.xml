@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-16"?>
+<DataExchangeTemplate RootArtifact="Lims.QCLimit" Description="" IgnoreResultStateDuringImport="False" HideFromExportMenu="False">
+    <Artifact Name="Lims.QCLimit" Type="Lims.QCLimit" ImportType="Update" Required="yes">
+        <SimpleProperty Name="IsPrepLimit" Type="Boolean" Required="yes">
+            <Validators />
+        </SimpleProperty>
+        <SimpleProperty Name="LowerControlLimit" Type="Decimal" Required="yes">
+            <Validators />
+        </SimpleProperty>
+        <SimpleProperty Name="UpperControlLimit" Type="Decimal" Required="yes">
+            <Validators />
+        </SimpleProperty>
+        <ComplexProperty Name="ControlUnit" Type="Unit" ImportType="Reference" Required="yes">
+            <SimpleProperty Name="Abbreviation" Type="String" Required="yes">
+                <Validators>
+                    <LengthValidator MinLength="0" MaxLength="16" />
+                </Validators>
+            </SimpleProperty>
+            <SimpleProperty Name="Name" Type="String" Required="yes">
+                <Validators>
+                    <LengthValidator MinLength="0" MaxLength="64" />
+                </Validators>
+            </SimpleProperty>
+        </ComplexProperty>
+        <ComplexProperty Name="QCAnalyte" Type="QCAnalyte" ImportType="Reference" Required="yes">
+            <SimpleProperty Name="CutOff" Type="Decimal" Required="yes">
+                <Validators />
+            </SimpleProperty>
+            <SimpleProperty Name="DecimalDigits" Type="Int32" Required="yes">
+                <Validators />
+            </SimpleProperty>
+            <SimpleProperty Name="SigFigs" Type="Int32" Required="yes">
+                <Validators />
+            </SimpleProperty>
+            <ComplexProperty Name="AnalyteIdentifier" Type="AnalyteIdentifier" ImportType="Reference" Required="yes">
+                <SimpleProperty Name="CAS" Type="String" Required="yes">
+                    <Validators>
+                        <LengthValidator MinLength="0" MaxLength="32" />
+                    </Validators>
+                </SimpleProperty>
+                <SimpleProperty Name="Name" Type="String" Required="yes">
+                    <Validators>
+                        <LengthValidator MinLength="0" MaxLength="1000" />
+                    </Validators>
+                </SimpleProperty>
+            </ComplexProperty>
+            <ComplexProperty Name="AnalyteType" Type="AnalyteType" ImportType="Reference" Required="yes">
+                <SimpleProperty Name="Name" Type="String" Required="yes">
+                    <Validators>
+                        <LengthValidator MinLength="0" MaxLength="50" />
+                    </Validators>
+                </SimpleProperty>
+            </ComplexProperty>
+            <ComplexProperty Name="EntryUnit" Type="Unit" ImportType="Reference" Required="yes">
+                <SimpleProperty Name="Abbreviation" Type="String" Required="yes">
+                    <Validators>
+                        <LengthValidator MinLength="0" MaxLength="16" />
+                    </Validators>
+                </SimpleProperty>
+                <SimpleProperty Name="Name" Type="String" Required="yes">
+                    <Validators>
+                        <LengthValidator MinLength="0" MaxLength="64" />
+                    </Validators>
+                </SimpleProperty>
+            </ComplexProperty>
+            <ComplexProperty Name="MethodReference" Type="MethodReference" ImportType="Reference" Required="yes">
+                <SimpleProperty Name="QCAliquotAmount" Type="Decimal" Required="yes">
+                    <Validators />
+                </SimpleProperty>
+                <SimpleProperty Name="Reference" Type="String" Required="yes">
+                    <Validators>
+                        <LengthValidator MinLength="0" MaxLength="255" />
+                    </Validators>
+                </SimpleProperty>
+                <ComplexProperty Name="QCAliquotAmountUnit" Type="Unit" ImportType="Reference" Required="yes">
+                    <SimpleProperty Name="Abbreviation" Type="String" Required="yes">
+                        <Validators>
+                            <LengthValidator MinLength="0" MaxLength="16" />
+                        </Validators>
+                    </SimpleProperty>
+                    <SimpleProperty Name="Name" Type="String" Required="yes">
+                        <Validators>
+                            <LengthValidator MinLength="0" MaxLength="64" />
+                        </Validators>
+                    </SimpleProperty>
+                </ComplexProperty>
+                <ComplexProperty Name="QCContainerType" Type="ContainerType" ImportType="CreateAndUpdate" Required="yes">
+                    <SimpleProperty Name="Name" Type="String" Required="yes">
+                        <Validators />
+                    </SimpleProperty>
+                    <ComplexProperty Name="BasisQuantityUnit" Type="Unit" ImportType="CreateAndUpdate" Required="yes">
+                        <SimpleProperty Name="Abbreviation" Type="String" Required="yes">
+                            <Validators>
+                                <LengthValidator MinLength="0" MaxLength="16" />
+                            </Validators>
+                        </SimpleProperty>
+                        <SimpleProperty Name="Name" Type="String" Required="yes">
+                            <Validators>
+                                <LengthValidator MinLength="0" MaxLength="64" />
+                            </Validators>
+                        </SimpleProperty>
+                    </ComplexProperty>
+                </ComplexProperty>
+            </ComplexProperty>
+            <ComplexProperty Name="ReportingUnit" Type="Unit" ImportType="Reference" Required="yes">
+                <SimpleProperty Name="Abbreviation" Type="String" Required="yes">
+                    <Validators>
+                        <LengthValidator MinLength="0" MaxLength="16" />
+                    </Validators>
+                </SimpleProperty>
+                <SimpleProperty Name="Name" Type="String" Required="yes">
+                    <Validators>
+                        <LengthValidator MinLength="0" MaxLength="64" />
+                    </Validators>
+                </SimpleProperty>
+            </ComplexProperty>
+        </ComplexProperty>
+        <ComplexProperty Name="QCCalculation" Type="QCCalculation" ImportType="Reference" Required="yes">
+            <SimpleProperty Name="Name" Type="String" Required="yes">
+                <Validators>
+                    <LengthValidator MinLength="0" MaxLength="64" />
+                </Validators>
+            </SimpleProperty>
+        </ComplexProperty>
+        <ComplexProperty Name="QCControlLimitSet" Type="QCControlLimitSet" ImportType="Reference" Required="yes">
+            <SimpleProperty Name="ActivatedDate" Type="DateTime" Required="yes">
+                <Validators />
+            </SimpleProperty>
+            <ComplexProperty Name="Employee" Type="Employee" ImportType="CreateAndUpdate" Required="yes">
+                <ComplexProperty Name="Contact" Type="Contact" ImportType="CreateAndUpdate" Required="yes">
+                    <SimpleProperty Name="FirstName" Type="String" Required="yes">
+                        <Validators>
+                            <LengthValidator MinLength="0" MaxLength="64" />
+                        </Validators>
+                    </SimpleProperty>
+                    <SimpleProperty Name="LastName" Type="String" Required="yes">
+                        <Validators>
+                            <LengthValidator MinLength="0" MaxLength="64" />
+                        </Validators>
+                    </SimpleProperty>
+                    <SimpleProperty Name="MiddleName" Type="String" Required="yes">
+                        <Validators>
+                            <LengthValidator MinLength="0" MaxLength="64" />
+                        </Validators>
+                    </SimpleProperty>
+                    <SimpleProperty Name="Suffix" Type="String" Required="yes">
+                        <Validators>
+                            <LengthValidator MinLength="0" MaxLength="64" />
+                        </Validators>
+                    </SimpleProperty>
+                    <SimpleProperty Name="Title" Type="String" Required="yes">
+                        <Validators>
+                            <LengthValidator MinLength="0" MaxLength="64" />
+                        </Validators>
+                    </SimpleProperty>
+                </ComplexProperty>
+                <ComplexProperty Name="Facility" Type="Facility" ImportType="CreateAndUpdate" Required="yes">
+                    <SimpleProperty Name="Name" Type="String" Required="yes">
+                        <Validators>
+                            <LengthValidator MinLength="0" MaxLength="50" />
+                        </Validators>
+                    </SimpleProperty>
+                </ComplexProperty>
+            </ComplexProperty>
+            <ComplexProperty Name="Instrument" Type="Instrument" ImportType="CreateAndUpdate" Required="yes">
+                <SimpleProperty Name="AssetNumber" Type="String" Required="yes">
+                    <Validators>
+                        <LengthValidator MinLength="0" MaxLength="64" />
+                    </Validators>
+                </SimpleProperty>
+                <SimpleProperty Name="Name" Type="String" Required="yes">
+                    <Validators>
+                        <LengthValidator MinLength="0" MaxLength="64" />
+                    </Validators>
+                </SimpleProperty>
+                <ComplexProperty Name="Facility" Type="Facility" ImportType="CreateAndUpdate" Required="yes">
+                    <SimpleProperty Name="Name" Type="String" Required="yes">
+                        <Validators>
+                            <LengthValidator MinLength="0" MaxLength="50" />
+                        </Validators>
+                    </SimpleProperty>
+                </ComplexProperty>
+                <ComplexProperty Name="InstrumentType" Type="InstrumentType" ImportType="CreateAndUpdate" Required="yes">
+                    <SimpleProperty Name="Name" Type="String" Required="yes">
+                        <Validators>
+                            <LengthValidator MinLength="0" MaxLength="64" />
+                        </Validators>
+                    </SimpleProperty>
+                </ComplexProperty>
+            </ComplexProperty>
+            <ComplexProperty Name="InstrumentType" Type="InstrumentType" ImportType="CreateAndUpdate" Required="yes">
+                <SimpleProperty Name="Name" Type="String" Required="yes">
+                    <Validators>
+                        <LengthValidator MinLength="0" MaxLength="64" />
+                    </Validators>
+                </SimpleProperty>
+            </ComplexProperty>
+            <ComplexProperty Name="MethodReference" Type="MethodReference" ImportType="CreateAndUpdate" Required="yes">
+                <SimpleProperty Name="QCAliquotAmount" Type="Decimal" Required="yes">
+                    <Validators />
+                </SimpleProperty>
+                <SimpleProperty Name="Reference" Type="String" Required="yes">
+                    <Validators>
+                        <LengthValidator MinLength="0" MaxLength="255" />
+                    </Validators>
+                </SimpleProperty>
+                <ComplexProperty Name="QCAliquotAmountUnit" Type="Unit" ImportType="CreateAndUpdate" Required="yes">
+                    <SimpleProperty Name="Abbreviation" Type="String" Required="yes">
+                        <Validators>
+                            <LengthValidator MinLength="0" MaxLength="16" />
+                        </Validators>
+                    </SimpleProperty>
+                    <SimpleProperty Name="Name" Type="String" Required="yes">
+                        <Validators>
+                            <LengthValidator MinLength="0" MaxLength="64" />
+                        </Validators>
+                    </SimpleProperty>
+                </ComplexProperty>
+                <ComplexProperty Name="QCContainerType" Type="ContainerType" ImportType="CreateAndUpdate" Required="yes">
+                    <SimpleProperty Name="Name" Type="String" Required="yes">
+                        <Validators />
+                    </SimpleProperty>
+                    <ComplexProperty Name="BasisQuantityUnit" Type="Unit" ImportType="CreateAndUpdate" Required="yes">
+                        <SimpleProperty Name="Abbreviation" Type="String" Required="yes">
+                            <Validators>
+                                <LengthValidator MinLength="0" MaxLength="16" />
+                            </Validators>
+                        </SimpleProperty>
+                        <SimpleProperty Name="Name" Type="String" Required="yes">
+                            <Validators>
+                                <LengthValidator MinLength="0" MaxLength="64" />
+                            </Validators>
+                        </SimpleProperty>
+                    </ComplexProperty>
+                </ComplexProperty>
+            </ComplexProperty>
+        </ComplexProperty>
+        <ComplexProperty Name="QCType" Type="QCType" ImportType="CreateAndUpdate" Required="yes">
+            <SimpleProperty Name="Name" Type="String" Required="yes">
+                <Validators>
+                    <LengthValidator MinLength="0" MaxLength="64" />
+                </Validators>
+            </SimpleProperty>
+            <SimpleProperty Name="PointsOnQCChart" Type="Int32" Required="yes">
+                <Validators />
+            </SimpleProperty>
+        </ComplexProperty>
+    </Artifact>
+</DataExchangeTemplate>
