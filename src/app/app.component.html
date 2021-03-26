@@ -1,5 +1,8 @@
 <div class="content">
   <div class="item">
+    <h3>{{time}}</h3>
+  </div>
+  <div class="item">
     <div>
       <label for="file-upload" class="custom-button">Upload a dataset</label>
         <input
@@ -10,6 +13,25 @@
           (change)="onFileChange($event)"
         />
     </div>
+  </div>
+  <div class="item">
+    <div id="input-file">
+      <table>
+        <thead>
+          <th *ngFor="let name of colNames">{{ name }}</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of colData">
+            <td *ngFor="let cell of row">{{ cell }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="item">
+    <div id="output-file">{{ outputFile }}</div>
+  </div>
+  <div class="item">
     <div>
       <label class="custom-button" (click)="saveXML()">save XML</label>
     </div>

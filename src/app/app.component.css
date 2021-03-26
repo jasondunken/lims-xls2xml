@@ -1,16 +1,16 @@
-
 .content {
     margin: 0;
     padding: 0;
     display: grid;
-    background: gainsboro;
     place-items: center;
-    height: 100vh;
+    row-gap: .5rem;
+    grid-template-rows: auto auto 1fr 1fr auto;
 }
 
 .item {
     display: grid;
-    place-items: center;
+    width: 100%;
+    text-align: center;
 }
 
 input[type="file"] {
@@ -29,4 +29,18 @@ input[type="file"] {
 
 .custom-button:hover {
     background-color: lightgray;
+}
+
+#input-file,
+#output-file  {
+    overflow-y: auto;
+    overflow-x: auto;
+    background-color: lightsteelblue;
+    margin: 0 1rem;
+    height: 350px;
+    max-height: 350px;
+}
+
+th {
+    padding: .5rem;
 }
