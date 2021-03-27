@@ -15,8 +15,6 @@ import { ElectronService } from './services/electron.service';
 export class AppComponent {
   title = 'lims-xls-to-xml';
 
-  time;
-
   statusMessage = "";
 
   inputFile = '';
@@ -24,16 +22,15 @@ export class AppComponent {
   colNames = [];
   colData = [];
   outputFile = '';
+  outputName = ''
 
   constructor(
-    private electron: ElectronService
-  ) {
-    this.time = toXML({ currentTime: new Date() });
-  };
+    private electron: ElectronService,
+  ) {};
 
   onFileChange($event: any) {
     const target: DataTransfer = <DataTransfer>($event.target);
-    if (target.files.length !== 1) {
+    if (target.files.length > 1) {
       console.log('XLSX can only load one file at a time');
       return;
     }
@@ -57,16 +54,20 @@ export class AppComponent {
 
   translateXLS(xls: any): void {
     this.inputFile = {...xls};
-    console.log('input: ', this.inputFile);
+    // console.log('input: ', this.inputFile);
     this.colNames = xls[0];
     this.colData = xls.splice(1);
 
     this.outputFile = toXML(this.inputFile);
-    console.log('output: ', this.outputFile);
+    // console.log('output: ', this.outputFile);
+    this.outputName = this.getTimestampName();
   }
 
   saveXML(): void {
-    console.log("SAVE! ", this.getTimestampName());
+    const input = document.getElementById('outputname') as HTMLInputElement;
+    const filename = input.value;
+    console.log("SAVE! ", filename);
+    console.log("data: ", this.outputFile);
     // this.electron.saveFile('testfilefromangular.txt', 'test text for angular test file');
   }
 
@@ -74,7 +75,7 @@ export class AppComponent {
     const dateObj = new Date();
     const date = dateObj.toLocaleDateString().split("/");
     const time = dateObj.toLocaleTimeString();
-    const name = this.inputName.slice(0, this.inputName.indexOf('.'));
-    return [...date, ...time, name].join('_');
+    const name = this.inputName.slice(0, this.inputName.indexOf('.')).split(' ');
+    return [...name, ...date, time].join('_');
   }
 }

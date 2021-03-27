@@ -1,8 +1,5 @@
 <div class="content">
   <div class="item">
-    <h3>{{time}}</h3>
-  </div>
-  <div class="item">
     <div>
       <label for="file-upload" class="custom-button">Upload a dataset</label>
         <input
@@ -15,6 +12,7 @@
     </div>
   </div>
   <div class="item">
+    <div>{{ inputName }}</div>
     <div id="input-file">
       <table>
         <thead>
@@ -31,9 +29,12 @@
   <div class="item">
     <div id="output-file">{{ outputFile }}</div>
   </div>
-  <div class="item">
-    <div>
-      <label class="custom-button" (click)="saveXML()">save XML</label>
+  <div id="item" *ngIf="outputFile">
+    <div id="file-row">
+      <div id="filename">
+        <input type="text" id="outputname" value="{{outputName}}">
+        <div class="custom-button" (click)="saveXML()">save .xml</div>
+      </div>
     </div>
   </div>
 </div>
