@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LIMS Xls2Xml</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div class="content">
+      <div class="item">
+        <div>
+          <label for="file-upload" class="custom-button">Upload a dataset</label>
+            <input
+              id="file-upload"
+              type="file"
+              accept=".xls, .xlsx"
+              name="files[]"
+              (change)="onFileChange($event)"
+            />
+        </div>
+      </div>
+
+      <div class="item">
+        <div id="inputName">No file loaded</div>
+        <table id="input-file"></table>
+      </div>
+
+      <div class="item">
+        <div id="output-file">No file loaded</div>
+      </div>
+
+      <div id="item" *ngIf="outputFile">
+        <div id="file-row">
+          <div id="filename">
+            <input type="text" id="outputname">
+            <div class="custom-button" onClick="saveXML()">save .xml</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
