@@ -1,6 +1,6 @@
-const xlsx = require("xlsx");
-const toXML = require('jstoxml');
-const electron = require('electron');
+// const xlsx = require("xlsx");
+// const toXML = require('jstoxml');
+// const electron = require('electron');
 
 let  statusMessage = "";
 
@@ -12,7 +12,8 @@ let  outputFile = '';
 let  outputName = '';
 
 
-function onFileChange($event) {
+function onFileChange() {
+  console.log('upload!');
     // const target: DataTransfer = <DataTransfer>($event.target);
     // if (target.files.length > 1) {
     //   console.log('XLSX can only load one file at a time');

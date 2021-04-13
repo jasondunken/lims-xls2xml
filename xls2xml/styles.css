@@ -1,16 +1,28 @@
+body {
+    background-color: lightgoldenrodyellow;
+}
+
 .content {
     margin: 0;
     padding: 0;
     display: grid;
     place-items: center;
     row-gap: .5rem;
-    grid-template-rows: auto 1fr 1fr auto;
+    grid-template-rows: 1fr auto 1fr auto;
 }
 
 .item {
     display: grid;
     width: 100%;
-    text-align: center;
+}
+
+.section-heading {
+    margin: 1rem 1rem .5rem 1rem;
+}
+
+.button-row {
+    display: grid;
+    place-items: center;
 }
 
 input[type="file"] {
@@ -25,6 +37,7 @@ input[type="file"] {
     color: black;
     width: 200px;
     text-align: center;
+    background-color: lightsteelblue;
 }
 
 .custom-button:hover {
@@ -43,14 +56,4 @@ input[type="file"] {
 
 th {
     padding: .5rem;
-}
-
-#filename {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    /* background-color: lightsalmon; */
-}
-
-#file-row {
-    background-color: lightgreen;
 }

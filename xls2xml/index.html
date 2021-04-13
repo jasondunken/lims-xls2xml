@@ -8,33 +8,31 @@
   <body>
     <div class="content">
       <div class="item">
-        <div>
-          <label for="file-upload" class="custom-button">Upload a dataset</label>
+        <div class="section-heading">Input file: <span id="input-file-name">No file loaded</span></div>
+        <div id="input-file"></div>
+      </div>
+
+      <div class="item">
+        <div class="button-row">
+          <label for="file-upload" class="custom-button">Upload Excel file</label>
             <input
               id="file-upload"
               type="file"
               accept=".xls, .xlsx"
               name="files[]"
-              (change)="onFileChange($event)"
+              onChange="onFileChange()"
             />
         </div>
       </div>
 
       <div class="item">
-        <div id="inputName">No file loaded</div>
-        <table id="input-file"></table>
+        <div class="section-heading">Output file name: <input type="text" id="output-file-name"></input></div>
+        <div id="output-file"></div>
       </div>
 
-      <div class="item">
-        <div id="output-file">No file loaded</div>
-      </div>
-
-      <div id="item" *ngIf="outputFile">
-        <div id="file-row">
-          <div id="filename">
-            <input type="text" id="outputname">
-            <div class="custom-button" onClick="saveXML()">save .xml</div>
-          </div>
+      <div id="item">
+        <div class="button-row">
+          <div class="custom-button" onClick="saveXML()">Save .xml file</div>
         </div>
       </div>
     </div>

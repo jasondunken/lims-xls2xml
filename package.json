@@ -1,7 +1,7 @@
 {
   "name": "lims-xls-to-xml",
   "version": "0.0.0",
-  "main": "app.js",
+  "main": "main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

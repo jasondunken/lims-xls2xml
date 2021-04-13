@@ -15,10 +15,10 @@ function createWindow() {
             nodeIntegration: true
         },
         resizable: false,
-        frame: false,
+        // frame: false,
         icon: path.join(__dirname, 'src/favicon.ico')
     });
-    appWindow.loadFile(path.join(__dirname, `dist/index.html`));
+    appWindow.loadFile(path.join(__dirname, `xls2xml/index.html`));
     appWindow.webContents.openDevTools();
 }
 
