@@ -3,29 +3,29 @@ const path = require("path");
 
 const fs = require('fs');
 
-let appWindow;
-
-// if (require('electron-squirrel-startup')) return app.quit();
+let appWindow = null;
 
 function createWindow() {
     appWindow = new BrowserWindow({
         width: 1280,
         height: 720,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: false,
+            contextIsolation: true,
+            enableRemoteModule: false,
+            preload: path.join(__dirname, 'preload.js')
         },
         resizable: false,
         // frame: false,
         icon: path.join(__dirname, 'src/favicon.ico')
     });
-    appWindow.loadFile(path.join(__dirname, `xls2xml/index.html`));
+    appWindow.loadFile(path.join(__dirname, `index.html`));
     appWindow.webContents.openDevTools();
 }
 
 app.whenReady()
-    .then(createWindow)
-    .then(setupApp())
-    .then(testSave());
+    .then(createWindow) // passing the function as a callback, not the return of the function
+    .then(setupApp());
 
 app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') {
@@ -39,20 +39,19 @@ app.on('activate', function () {
     }
 })
 
-ipcMain.handle('saveFile', async (event, fileName, fileData) => {
+ipcMain.on('saveFile', async (event, data) => {
     console.log('saving file...');
     try {
-        fs.writeFile(path.join(__dirname, '../xls2xml-output/', fileName), fileData, (err) => {
+        fs.writeFile(path.join(__dirname, '../xls2xml-output/', data.filename + '.txt'), data.data, (err) => {
             if (err) {
                 console.log('error: ', err);
             } else {
-                console.log('testFile.txt saved!');
+                console.log('test-file.txt saved!');
             }
         });
     } catch(err) {
         console.log('error: ', err);
     }
-
 })
 
 function setupApp() {
@@ -66,20 +65,6 @@ function setupApp() {
                 }
             } else {
                 console.log('output folder created');
-            }
-        });
-    } catch(err) {
-        console.log('error: ', err);
-    }
-}
-
-function testSave() {
-    try {
-        fs.writeFile(path.join(__dirname, '../xls2xml-output/testFile.txt'), 'test file test text', (err) => {
-            if (err) {
-                console.log('error: ', err);
-            } else {
-                console.log('testFile.txt saved!');
             }
         });
     } catch(err) {

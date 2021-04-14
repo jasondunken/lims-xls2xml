@@ -1,7 +1,3 @@
-// const xlsx = require("xlsx");
-// const toXML = require('jstoxml');
-// const electron = require('electron');
-
 let  statusMessage = "";
 
 let  inputFile = '';
@@ -9,8 +5,7 @@ let  inputName = '';
 let  colNames = [];
 let  colData = [];
 let  outputFile = '';
-let  outputName = '';
-
+let  outputName = 'default-test-file';
 
 function onFileChange() {
   console.log('upload!');
@@ -49,11 +44,7 @@ function translateXLS(xls) {
 }
 
 function saveXML() {
-  const input = document.getElementById('outputname');
-  const filename = input.value;
-  console.log("SAVE! ", filename);
-  console.log("data: ", this.outputFile);
-  // this.electron.saveFile('testfilefromangular.txt', 'test text for angular test file');
+  window.api.send("saveFile", { filename: 'test-file', data: 'some data' });
 }
 
 function getTimestampName() {
@@ -63,4 +54,3 @@ function getTimestampName() {
   const name = this.inputName.slice(0, this.inputName.indexOf('.')).split(' ');
   return [...name, ...date, time].join('_');
 }
-
