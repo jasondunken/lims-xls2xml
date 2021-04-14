@@ -41,7 +41,7 @@ window.api.receive("inputData", (data) => {
 
 window.api.receive("outputData", (data) => {
   this.outputData = data;
-  document.getElementById('output-file-name').value = data.path;
+  document.getElementById('output-file-name').value = data.filename;
 
   let tableHTML = '<table><thead><tr>';
   for (let i = 0; i < data.colNames.length; i++) {

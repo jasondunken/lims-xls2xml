@@ -53,11 +53,11 @@ ipcMain.on('loadFile', async (event, path) => {
 ipcMain.on('saveFile', async (event, data) => {
     console.log('save data: ', data.path);
     try {
-        fs.writeFile(path.join(__dirname, '../xls2xml-output/test-file.txt'), JSON.stringify(data.colData), (err) => {
+        fs.writeFile(path.join(__dirname, '../xls2xml-output/', data.filename), JSON.stringify(data.colData), (err) => {
             if (err) {
                 console.log('error: ', err);
             } else {
-                console.log(`test-file.txt saved.`);
+                console.log(`${data.filename} saved.`);
             }
         });
     } catch(err) {
@@ -86,9 +86,14 @@ function setupApp() {
 function translateXLS(path, wsData) {
     const colNames = wsData[0];
     const colData = wsData.splice(1);
-    const fileData = { path, colNames, colData };
-    appWindow.webContents.send('inputData', fileData);
+    appWindow.webContents.send('inputData', { path, colNames, colData });
+    
+    path = path.split('\\');
+    let filename = path[path.length - 1];
 
+    filename = filename.slice(0, filename.indexOf('.')) + ".xml";
+    console.log(filename);
+    const fileData = { filename, colNames, colData };
     appWindow.webContents.send('outputData', fileData);
 }
 
