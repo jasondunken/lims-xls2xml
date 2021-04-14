@@ -3,6 +3,9 @@ const path = require("path");
 
 const fs = require('fs');
 
+const XLSX = require('xlsx');
+const toXML = require('to-xml').toXML;
+
 let appWindow = null;
 
 function createWindow() {
@@ -39,8 +42,16 @@ app.on('activate', function () {
     }
 })
 
+ipcMain.on('loadFile', async (event, path) => {
+    const workbook = XLSX.readFile(path);
+    const wsName = workbook.SheetNames[0];
+    const wsData = XLSX.utils.sheet_to_json(workbook.Sheets[wsName], {header: 1});
+    const colNames = wsData[0];
+    const colData = wsData.splice(1);
+    appWindow.webContents.send('fileData', { path, colNames, colData });
+})
+
 ipcMain.on('saveFile', async (event, data) => {
-    console.log('saving file...');
     try {
         fs.writeFile(path.join(__dirname, '../xls2xml-output/', data.filename + '.txt'), data.data, (err) => {
             if (err) {
@@ -70,4 +81,23 @@ function setupApp() {
     } catch(err) {
         console.log('error: ', err);
     }
+}
+
+function translateXLS(xls) {
+  this.inputFile = {...xls};
+  // console.log('input: ', this.inputFile);
+  this.colNames = xls[0];
+  this.colData = xls.splice(1);
+
+  this.outputFile = toXML(this.inputFile);
+  // console.log('output: ', this.outputFile);
+  this.outputName = this.getTimestampName();
+}
+
+function getTimestampName() {
+  const dateObj = new Date();
+  const date = dateObj.toLocaleDateString().split("/");
+  const time = dateObj.toLocaleTimeString();
+  const name = this.inputName.slice(0, this.inputName.indexOf('.')).split(' ');
+  return [...name, ...date, time].join('_');
 }

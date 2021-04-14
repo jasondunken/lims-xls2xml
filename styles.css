@@ -54,6 +54,11 @@ input[type="file"] {
   max-height: 350px;
 }
 
-th {
+div > table > thead > tr > th {
   padding: .5rem;
+  background-color: goldenrod;
+}
+
+div > table {
+  text-align: center;
 }

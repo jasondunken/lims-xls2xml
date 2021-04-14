@@ -8,5 +8,9 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^12.0.2"
+  },
+  "dependencies": {
+    "to-xml": "^0.1.4",
+    "xlsx": "^0.16.9"
   }
 }

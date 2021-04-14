@@ -8,49 +8,36 @@ let  outputFile = '';
 let  outputName = 'default-test-file';
 
 function onFileChange() {
-  console.log('upload!');
-    // const target: DataTransfer = <DataTransfer>($event.target);
-    // if (target.files.length > 1) {
-    //   console.log('XLSX can only load one file at a time');
-    //   return;
-    // }
-    // const reader: FileReader = new FileReader();
-    // reader.onload = (e) => {
-    //   const bstr: string = e.target.result;
-    //   const wb: XLSX.WorkBook = XLSX.read(bstr, {type: 'binary'});
-    //   const wsname: string = wb.SheetNames[0];
-    //   const ws: XLSX.WorkSheet = wb.Sheets[wsname];
-
-    //   this.inputName = target.files[0].name;
-    //   this.translateXLS(XLSX.utils.sheet_to_json(ws, {header: 1}));
-    // }
-    // reader.onerror = (err) => {
-    //   this.statusMessage = 'Problem loading file';
-    //   console.log('FileReader.error: ', err);
-    //   reader.abort();
-    // }
-    // reader.readAsBinaryString(target.files[0]);
+  if (document.getElementById('file-upload').files.length > 1) {
+    console.log('XLSX can only load one file at a time');
+    return;
+  }
+  this.loadFile(document.getElementById('file-upload').files[0].path);
 }
 
-function translateXLS(xls) {
-  this.inputFile = {...xls};
-  // console.log('input: ', this.inputFile);
-  this.colNames = xls[0];
-  this.colData = xls.splice(1);
-
-  this.outputFile = toXML(this.inputFile);
-  // console.log('output: ', this.outputFile);
-  this.outputName = this.getTimestampName();
+function loadFile(path) {
+  window.api.send('loadFile', path);
 }
 
 function saveXML() {
   window.api.send("saveFile", { filename: 'test-file', data: 'some data' });
 }
 
-function getTimestampName() {
-  const dateObj = new Date();
-  const date = dateObj.toLocaleDateString().split("/");
-  const time = dateObj.toLocaleTimeString();
-  const name = this.inputName.slice(0, this.inputName.indexOf('.')).split(' ');
-  return [...name, ...date, time].join('_');
-}
+window.api.receive("fileData", (data) => {
+  document.getElementById('input-file-name').innerHTML = data.path;
+
+  let tableHTML = '<table><thead><tr>';
+  for (let i = 0; i < data.colNames.length; i++) {
+    tableHTML += `<th>${data.colNames[i]}</th>`;
+  }
+  tableHTML += '</tr></thead>';
+  for (let i = 0; i < data.colData.length; i++) {
+    tableHTML += '<tr>';
+    for (let j = 0; j < data.colNames.length; j++) {
+      tableHTML += `<td>${data.colData[i][j]}</td>`;
+    }
+    tableHTML += '</tr>';
+  }
+  tableHTML += "</table>";
+  document.getElementById('input-file').innerHTML = tableHTML;
+})
