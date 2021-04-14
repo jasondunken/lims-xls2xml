@@ -16,6 +16,8 @@ function loadFile(path) {
 }
 
 function saveXML() {
+  // TODO validate name
+  this.outputData.filename = document.getElementById('output-file-name').value;
   window.api.send("saveFile", this.outputData);
 }
 

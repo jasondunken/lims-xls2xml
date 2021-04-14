@@ -51,9 +51,9 @@ ipcMain.on('loadFile', async (event, path) => {
 })
 
 ipcMain.on('saveFile', async (event, data) => {
-    console.log('save data: ', data.path);
+    const filename = `${data.filename}_${getTimestamp()}.xml`; 
     try {
-        fs.writeFile(path.join(__dirname, '../xls2xml-output/', data.filename), JSON.stringify(data.colData), (err) => {
+        fs.writeFile(path.join(__dirname, '../xls2xml-output/', filename), JSON.stringify(data.colData), (err) => {
             if (err) {
                 console.log('error: ', err);
             } else {
@@ -90,17 +90,16 @@ function translateXLS(path, wsData) {
     
     path = path.split('\\');
     let filename = path[path.length - 1];
-
-    filename = filename.slice(0, filename.indexOf('.')) + ".xml";
-    console.log(filename);
-    const fileData = { filename, colNames, colData };
-    appWindow.webContents.send('outputData', fileData);
+    filename = filename.slice(0, filename.indexOf('.'));
+    appWindow.webContents.send('outputData', { filename, colNames, colData });
 }
 
-function getTimestampName() {
+function getTimestamp() {
     const dateObj = new Date();
     const date = dateObj.toLocaleDateString().split("/");
-    const time = dateObj.toLocaleTimeString();
-    const name = this.inputName.slice(0, this.inputName.indexOf('.')).split(' ');
-    return [...name, ...date, time].join('_');
+    const hours = dateObj.getHours();
+    const minutes = dateObj.getMinutes();
+    const seconds = dateObj.getSeconds();
+
+    return `${[...date].join('-')}_${hours}-${minutes}-${seconds}`;
 }

@@ -9,7 +9,6 @@ contextBridge.exposeInMainWorld(
             }
         },
         receive: (channel, func) => {
-            console.log('channel, func: ', channel, func);
             let validChannels = ["inputData", "outputData"];
             if (validChannels.includes(channel)) {
                 ipcRenderer.on(channel, (event, ...args) => {
