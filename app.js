@@ -22,13 +22,13 @@ function createWindow() {
         // frame: false,
         icon: path.join(__dirname, 'src/favicon.ico')
     });
-    appWindow.loadFile(path.join(__dirname, `index.html`));
+    appWindow.loadFile(path.join(__dirname, 'index.html'));
     appWindow.webContents.openDevTools();
 }
 
 app.whenReady()
     .then(createWindow) // passing the function as a callback, not the return of the function
-    .then(setupApp());
+    .then(setupApp);
 
 app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') {
@@ -43,21 +43,21 @@ app.on('activate', function () {
 })
 
 ipcMain.on('loadFile', async (event, path) => {
+    // TODO error checking
     const workbook = XLSX.readFile(path);
     const wsName = workbook.SheetNames[0];
     const wsData = XLSX.utils.sheet_to_json(workbook.Sheets[wsName], {header: 1});
-    const colNames = wsData[0];
-    const colData = wsData.splice(1);
-    appWindow.webContents.send('fileData', { path, colNames, colData });
+    translateXLS(path, wsData);
 })
 
 ipcMain.on('saveFile', async (event, data) => {
+    console.log('save data: ', data.path);
     try {
-        fs.writeFile(path.join(__dirname, '../xls2xml-output/', data.filename + '.txt'), data.data, (err) => {
+        fs.writeFile(path.join(__dirname, '../xls2xml-output/test-file.txt'), JSON.stringify(data.colData), (err) => {
             if (err) {
                 console.log('error: ', err);
             } else {
-                console.log('test-file.txt saved!');
+                console.log(`test-file.txt saved.`);
             }
         });
     } catch(err) {
@@ -83,21 +83,19 @@ function setupApp() {
     }
 }
 
-function translateXLS(xls) {
-  this.inputFile = {...xls};
-  // console.log('input: ', this.inputFile);
-  this.colNames = xls[0];
-  this.colData = xls.splice(1);
+function translateXLS(path, wsData) {
+    const colNames = wsData[0];
+    const colData = wsData.splice(1);
+    const fileData = { path, colNames, colData };
+    appWindow.webContents.send('inputData', fileData);
 
-  this.outputFile = toXML(this.inputFile);
-  // console.log('output: ', this.outputFile);
-  this.outputName = this.getTimestampName();
+    appWindow.webContents.send('outputData', fileData);
 }
 
 function getTimestampName() {
-  const dateObj = new Date();
-  const date = dateObj.toLocaleDateString().split("/");
-  const time = dateObj.toLocaleTimeString();
-  const name = this.inputName.slice(0, this.inputName.indexOf('.')).split(' ');
-  return [...name, ...date, time].join('_');
+    const dateObj = new Date();
+    const date = dateObj.toLocaleDateString().split("/");
+    const time = dateObj.toLocaleTimeString();
+    const name = this.inputName.slice(0, this.inputName.indexOf('.')).split(' ');
+    return [...name, ...date, time].join('_');
 }
