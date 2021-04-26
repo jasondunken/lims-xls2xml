@@ -21,7 +21,7 @@ function loadFile(window, path) {
 
 function translateXLS(window, filename, colNames) {
     const names = [];
-    // reformatting names: IsPrepLimit--Lims.QCLimit -> Lims.QCLimit.IsPrepLimit
+    // reformat names: IsPrepLimit--Lims.QCLimit -> Lims.QCLimit.IsPrepLimit
     for (let name of colNames) {
         name = name.split('--');
         let n = name[1].split('.');
@@ -35,9 +35,28 @@ function translateXLS(window, filename, colNames) {
                     `\t<Artifact Name="${rootArtifact}" Type="${rootArtifact}" ImportType="Update" Required="yes">\n`;
     const end = `\t</Artifact>\n</DataExchangeTemplate>`;
 
+    const xmlObjs = [];
+    // <SimpleProperty Name="IsPrepLimit" Type="Boolean" Required="yes">
+    for (let name of names) {
+        let xmlObj = `${getTabs(name.length)}VALUE\n`;
+        for (let i = name.length - 1; i >= 2; i--) {
+            // chack for and add parameters to xml tags
+            const tabs = getTabs(i);
+            xmlObj = `${tabs}<SimpleProperty Name="${name[i]}" Type="" Required="">\n${xmlObj}${tabs}</SimpleProperty>\n`;
+        }
+        xmlObjs.push(xmlObj);
+    }
 
-    const xmlOutput = `${header}${start}${end}`;
+    const xmlOutput = `${header}${start}${xmlObjs.join('')}${end}`;
     window.webContents.send('outputData', { filename, xmlOutput });
+}
+
+function getTabs(numTabs) {
+    let tabs = '';
+    for (let i = 0; i < numTabs; i++) {
+        tabs += '\t';
+    }
+    return tabs;
 }
 
 module.exports = {
