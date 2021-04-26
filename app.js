@@ -23,7 +23,7 @@ function createWindow() {
         icon: path.join(__dirname, 'src/favicon.ico')
     });
     appWindow.loadFile(path.join(__dirname, 'src/index.html'));
-    // appWindow.webContents.openDevTools();
+    appWindow.webContents.openDevTools();
 }
 
 app.whenReady()

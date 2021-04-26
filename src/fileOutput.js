@@ -4,7 +4,7 @@ const fs = require('fs');
 function saveFile(data) {
     const filename = `${data.filename}_${getTimestamp()}${data.extension}`; 
     try {
-        fs.writeFile(path.join(__dirname, '../../xls2xml-output/', filename), JSON.stringify(data.colData), (err) => {
+        fs.writeFile(path.join(__dirname, '../../xls2xml-output/', filename), data.xmlOutput, (err) => {
             if (err) {
                 console.log('error: ', err);
             } else {
