@@ -36,7 +36,24 @@ function translateXLS(window, filename, colNames) {
     const end = `\t</Artifact>\n</DataExchangeTemplate>`;
 
     const xmlObjs = [];
-    // <SimpleProperty Name="IsPrepLimit" Type="Boolean" Required="yes">
+    /* SimpleProperty without Validator example */
+    // <SimpleProperty Name="LowerControlLimit" Type="Decimal" Required="yes">
+    //     <Validators />
+    // </SimpleProperty>
+
+    /* ComplexProperty example */
+    // <ComplexProperty Name="ControlUnit" Type="Unit" ImportType="Reference" Required="yes">
+    //     <SimpleProperty Name="Abbreviation" Type="String" Required="yes">
+    //         <Validators>
+    //             <LengthValidator MinLength="0" MaxLength="16" />
+    //         </Validators>
+    //     </SimpleProperty>
+    //     <SimpleProperty Name="Name" Type="String" Required="yes">
+    //         <Validators>
+    //             <LengthValidator MinLength="0" MaxLength="64" />
+    //         </Validators>
+    //     </SimpleProperty>
+    // </ComplexProperty>
     for (let name of names) {
         let xmlObj = `${getTabs(name.length)}VALUE\n`;
         for (let i = name.length - 1; i >= 2; i--) {
