@@ -41,8 +41,9 @@ function translateXLS(window, filename, colNames) {
         let xmlObj = `${getTabs(name.length)}VALUE\n`;
         for (let i = name.length - 1; i >= 2; i--) {
             // chack for and add parameters to xml tags
+            const propertyType = i == name.length - 1? "SimpleProperty" : "ComplexProperty"
             const tabs = getTabs(i);
-            xmlObj = `${tabs}<SimpleProperty Name="${name[i]}" Type="" Required="">\n${xmlObj}${tabs}</SimpleProperty>\n`;
+            xmlObj = `${tabs}<${propertyType} Name="${name[i]}" Type="" Required="">\n${xmlObj}${tabs}</${propertyType}>\n`;
         }
         xmlObjs.push(xmlObj);
     }
