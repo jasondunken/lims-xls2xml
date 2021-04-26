@@ -3,8 +3,8 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require("path");
 const fs = require('fs');
 
-const fileConverter = require('./fileConverter');
-const fileOutput = require('./fileOutput');
+const fileConverter = require('./src/fileConverter');
+const fileOutput = require('./src/fileOutput');
 
 let appWindow = null;
 
@@ -22,7 +22,7 @@ function createWindow() {
         // frame: false,
         icon: path.join(__dirname, 'src/favicon.ico')
     });
-    appWindow.loadFile(path.join(__dirname, 'index.html'));
+    appWindow.loadFile(path.join(__dirname, 'src/index.html'));
     // appWindow.webContents.openDevTools();
 }
 
@@ -43,6 +43,7 @@ app.on('activate', function () {
 })
 
 ipcMain.on('loadFile', async (event, path) => {
+    // the window needs to passed so the required function can 
     fileConverter.loadFile(appWindow, path);
 })
 
