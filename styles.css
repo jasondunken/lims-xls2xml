@@ -62,3 +62,13 @@ div > table > thead > tr > th {
 div > table {
   text-align: center;
 }
+
+/* creates a new styling context */
+.example {
+  display: flow-root;
+}
+
+/* selects all but the first direct child */
+.example > * + * {
+  margin-top: 1rem;
+}

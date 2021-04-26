@@ -4,20 +4,20 @@ let inputData;
 let outputData;
 
 function onFileChange() {
-  if (document.getElementById('file-upload').files.length > 1) {
-    console.log('XLSX can only load one file at a time');
-    return;
-  }
-  this.loadFile(document.getElementById('file-upload').files[0].path);
-}
-
-function loadFile(path) {
-  window.api.send('loadFile', path);
+  const filePicker = document.getElementById('file-upload');
+  if (filePicker.files.length > 0) { 
+    if (filePicker.files.length > 1) {
+      console.log('XLSX can only load one file at a time');
+      return;
+    }
+    window.api.send('loadFile', filePicker.files[0].path);
+  } 
 }
 
 function saveXML() {
   // TODO validate name
   this.outputData.filename = document.getElementById('output-file-name').value;
+  this.outputData.extension = '.xml';
   window.api.send("saveFile", this.outputData);
 }
 
