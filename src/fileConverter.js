@@ -29,6 +29,8 @@ function translateXLS(window, filename, colNames) {
         names.push(n);  // n = [ 'Lims', 'QCLimit', 'IsPrepLimit' ]
     }
 
+    // console.log('names: ', names);
+
     const rootArtifact = names[0][0] + '.' + names[0][1];
     const header = `<?xml version="${xmlVersion}" encoding="${xmlEncoding}"?>\n`;
     const start = `<DataExchangeTemplate RootArtifact="${rootArtifact}" Description="" IgnoreResultStateDuringImport="False" HideFromExportMenu="False">\n` +
@@ -67,6 +69,13 @@ function translateXLS(window, filename, colNames) {
 
     const xmlOutput = `${header}${start}${xmlObjs.join('')}${end}`;
     window.webContents.send('outputData', { filename, xmlOutput });
+
+    const rootArtifactObj = { ...names };
+    for (let name of names) {
+        for (let i = 0; i < name.length; i++) {
+        }
+    }
+    console.log('obj: ', rootArtifactObj);
 }
 
 function getTabs(numTabs) {
