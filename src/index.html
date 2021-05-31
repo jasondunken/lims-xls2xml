@@ -20,13 +20,23 @@
               type="file"
               accept=".xls, .xlsx"
               name="files[]"
-              onChange="onFileChange()"
+              onChange="loadFile()"
             />
         </div>
       </div>
 
       <div class="item">
-        <div class="section-heading">Output file name: <input type="text" id="output-file-name"></input></div>
+        <div class="input-row">
+          <div class="section-heading">Output file name: <input type="text" id="output-file-name"></input></div>
+          <div class="section-heading">Import Type
+            <select id="import-type">
+              <option value="CREATE">Create</option>
+              <option value="UPDATE">Update</option>
+              <option value="CREATEANDUPDATE">Create and Update</option>
+            </select>
+          </div>
+          <div class="custom-button" onClick="translateXML()">Build XML</div>
+        </div>  
         <div id="output-file"></div>
       </div>
 

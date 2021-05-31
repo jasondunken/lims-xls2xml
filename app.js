@@ -48,6 +48,10 @@ ipcMain.on("loadFile", async (event, path) => {
   fileConverter.loadFile(appWindow, path);
 });
 
+ipcMain.on("translateXLS", async (event, data) => {
+  fileConverter.translateXLS(appWindow, data);
+});
+
 ipcMain.on("saveFile", async (event, data) => {
   fileOutput.saveFile(data);
 });
