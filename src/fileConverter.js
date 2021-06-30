@@ -1,6 +1,8 @@
 const XLSX = require("xlsx");
 const toXML = require("to-xml").toXML;
 
+const formatXML = require("xml-formatter");
+
 const xmlVersion = "1.0";
 const xmlEncoding = "utf-16";
 
@@ -75,32 +77,15 @@ function translateXLS(window, data) {
       parent: artifact.parent,
     });
   }
-  // artObj[rootArtifact] = {};
-  // artObj[rootArtifact][`@${names[j].parameter}`] = row[j];
 
   const toXMLObjs = [];
   for (let artObj of artObjs) {
     const toXMLObj = {};
     toXMLObj[artObj.root] = {};
-    for (let parameter of artObj.parameters) {
-      if (!parameter.parent.length) {
-        toXMLObj[artObj.root][`@${parameter.parameter}`] = parameter.value;
-      } else {
-        toXMLObj[artObj.root][parameter.parent] = {};
-        toXMLObj[artObj.root][parameter.parent][`@${parameter.parameter}`] =
-          parameter.value;
-      }
-    }
-    toXMLObjs.push(toXML(toXMLObj));
+    buildToXMLObj(artObj, toXMLObj);
+    toXMLObjs.push(formatXML(toXML(toXMLObj)));
   }
-
-  console.log("elements: ", elements);
-  console.log("artifacts: ", artifacts);
-  console.log("artifact objects: ", artObjs);
-  console.log("artifact object: ", artObjs[0].parameters);
-  console.log("toXMLObjs: ", toXMLObjs);
-
-  const xmlOutput = `${header}<list>\n\t${toXMLObjs.join("\n\t")}\n</list>`;
+  const xmlOutput = `${header}<list>\n${toXMLObjs.join("\n")}\n</list>`;
   window.webContents.send("outputData", { xmlOutput });
 
   // to-xml example
@@ -116,12 +101,19 @@ function translateXLS(window, data) {
   // <xml><foo bar="BAR">BAZ</foo></xml>
 }
 
-function getTabs(numTabs) {
-  let tabs = "";
-  for (let i = 0; i < numTabs; i++) {
-    tabs += "\t";
+function buildToXMLObj(article, toXMLObj) {
+  for (let parameter of article.parameters) {
+    let root = toXMLObj[article.root];
+    let parameterParent = [...parameter.parent];
+    while (parameterParent.length > 0) {
+      if (!root[parameterParent[0]]) {
+        root[parameterParent[0]] = {};
+      }
+      root = root[parameterParent[0]];
+      parameterParent = parameterParent.slice(1);
+    }
+    root[`@${parameter.parameter}`] = parameter.value;
   }
-  return tabs;
 }
 
 module.exports = {
