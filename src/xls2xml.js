@@ -10,14 +10,16 @@ function loadFile() {
       console.log("XLSX can only load one file at a time");
       return;
     }
+    const path = filePicker.files[0].path;
+    document.getElementById("input-file-name").innerHTML = path;
+
     window.api.send("loadFile", {
-      path: filePicker.files[0].path,
+      path,
     });
   }
 }
 
 function translateXML() {
-  console.log("translate");
   window.api.send("translateXLS", {
     colNames: inputData.colNames,
     colData: inputData.colData,
@@ -34,7 +36,6 @@ function saveXML() {
 
 window.api.receive("inputData", (data) => {
   inputData = data;
-  document.getElementById("input-file-name").innerHTML = data.path;
 
   let tableHTML = "<table><thead><tr>";
   for (let i = 0; i < data.colNames.length; i++) {

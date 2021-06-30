@@ -27,22 +27,24 @@
 
       <div class="item">
         <div class="input-row">
-          <div class="section-heading">Output file name: <input type="text" id="output-file-name"></input></div>
-          <div class="section-heading">Import Type
+          <div class="row-item">Output file name: <input type="text" id="output-file-name"></input></div>
+          <div class="row-item">Import Type
             <select id="import-type">
               <option value="CREATE">Create</option>
               <option value="UPDATE">Update</option>
               <option value="CREATEANDUPDATE">Create and Update</option>
             </select>
           </div>
-          <div class="custom-button" onClick="translateXML()">Build XML</div>
+          <div class="row-item">
+            <div class="custom-button" onClick="translateXML()">Build XML</div>
+          </div>
         </div>  
-        <div id="output-file"></div>
+        <textarea readonly="readonly" id="output-file"></textarea>
       </div>
 
       <div id="item">
         <div class="button-row">
-          <div class="custom-button" onClick="saveXML()">Save .xml file</div>
+          <div class="custom-button" onClick="saveXML()">Save Data Exchange XML</div>
         </div>
       </div>
     </div>
