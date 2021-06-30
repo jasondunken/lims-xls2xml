@@ -1,10 +1,11 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 
 const path = require("path");
-const fs = require("fs");
 
 const fileConverter = require("./src/fileConverter");
 const fileOutput = require("./src/fileOutput");
+
+if (require("electron-squirrel-startup")) return app.quit();
 
 let appWindow = null;
 
@@ -26,10 +27,7 @@ function createWindow() {
   // appWindow.webContents.openDevTools();
 }
 
-app
-  .whenReady()
-  .then(createWindow) // passing the function as a callback, not the return of the function
-  .then(setupApp);
+app.whenReady().then(createWindow); // passing the function as a callback, not the return of the function
 
 app.on("window-all-closed", function () {
   if (process.platform !== "darwin") {
@@ -44,7 +42,6 @@ app.on("activate", function () {
 });
 
 ipcMain.on("loadFile", async (event, path) => {
-  // the window needs to passed so the required function can
   fileConverter.loadFile(appWindow, path);
 });
 
@@ -53,23 +50,5 @@ ipcMain.on("translateXLS", async (event, data) => {
 });
 
 ipcMain.on("saveFile", async (event, data) => {
-  fileOutput.saveFile(data);
+  fileOutput.saveFile(appWindow, data);
 });
-
-function setupApp() {
-  try {
-    fs.mkdir(path.join(__dirname, "../xls2xml-output"), (err) => {
-      if (err) {
-        if (err.code === "EEXIST") {
-          console.log("output folder already exists");
-        } else {
-          console.log("error: ", err);
-        }
-      } else {
-        console.log("output folder created");
-      }
-    });
-  } catch (err) {
-    console.log("error: ", err);
-  }
-}

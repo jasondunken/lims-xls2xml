@@ -26,12 +26,17 @@
   },
   "config": {
     "forge": {
-      "packagerConfig": {},
+      "packagerConfig": {
+        "name": "lims_xls2xml",
+        "asar": true
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "lims_xls2xml"
+            "name": "lims_xls2xml",
+            "setupExe": "LIMS-XLS-CONVERTER.exe",
+            "noMsi": true
           }
         },
         {

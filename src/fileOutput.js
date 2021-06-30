@@ -1,23 +1,33 @@
-const path = require("path");
+const { dialog } = require("electron");
 const fs = require("fs");
 
-function saveFile(data) {
+function saveFile(window, data) {
   const filename = `${data.filename}_${getTimestamp()}${data.extension}`;
-  try {
-    fs.writeFile(
-      path.join(__dirname, "../../xls2xml-output/", filename),
-      data.xmlOutput,
-      (err) => {
-        if (err) {
-          console.log("error: ", err);
-        } else {
-          console.log(`${data.filename} saved.`);
+  dialog
+    .showSaveDialog(window, {
+      defaultPath: filename,
+      properties: ["showHiddenFiles", "createDirectory"],
+      filters: [{ name: "All Files", extensions: ["xml"] }],
+    })
+    .then((result) => {
+      if (!result.canceled) {
+        try {
+          fs.writeFile(result.filePath, data.xmlOutput, (err) => {
+            if (err) {
+              window.webContents.send("error", err);
+            } else {
+              window.webContents.send("info", `${filename} saved to`);
+              window.webContents.send("info", result.filePath);
+            }
+          });
+        } catch (err) {
+          window.webContents.send("error", err);
         }
       }
-    );
-  } catch (err) {
-    console.log("error: ", err);
-  }
+    })
+    .catch((err) => {
+      window.webContents.send("error", err);
+    });
 }
 
 function getTimestamp() {

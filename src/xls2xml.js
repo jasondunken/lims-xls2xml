@@ -1,5 +1,3 @@
-let statusMessage = "";
-
 let inputData;
 let outputData;
 
@@ -57,4 +55,12 @@ window.api.receive("inputData", (data) => {
 window.api.receive("outputData", (data) => {
   outputData = data;
   document.getElementById("output-file").textContent = data.xmlOutput;
+});
+
+window.api.receive("error", (error) => {
+  console.log("ERROR: ", error);
+});
+
+window.api.receive("info", (info) => {
+  console.log("INFO: ", info);
 });
