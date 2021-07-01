@@ -8,43 +8,38 @@
   <body>
     <div class="content">
       <div class="item">
-        <div class="section-heading">Input file: <span id="input-file-name">No file loaded</span></div>
-        <div id="input-file"></div>
-      </div>
-
-      <div class="item">
-        <div class="button-row">
-          <label for="file-upload" class="custom-button">Upload Excel file</label>
-            <input
-              id="file-upload"
-              type="file"
-              accept=".xls, .xlsx"
-              name="files[]"
-              onChange="loadFile()"
-            />
+        <div class="input-row">
+          <div class="row-item">Input file: <span id="input-file-name">No file loaded</span></div>
+          <div class="row-item button-bottom">
+            <label for="file-upload" class="custom-button">Upload Excel file</label>
+              <input
+                id="file-upload"
+                type="file"
+                accept=".xls, .xlsx"
+                name="files[]"
+                onChange="loadFile()"
+              />
+          </div>
+          <div class="row-item button-bottom">
+            <div class="custom-button" onClick="translateXML()">Build XML</div>
+          </div>
         </div>
       </div>
 
       <div class="item">
-        <div class="input-row">
-          <div class="row-item">Output file name: <input type="text" id="output-file-name"></input></div>
-          <div class="row-item">Import Type
-            <select id="import-type">
-              <option value="CREATE">Create</option>
-              <option value="UPDATE">Update</option>
-              <option value="CREATEANDUPDATE">Create and Update</option>
-            </select>
-          </div>
-          <div class="row-item">
-            <div class="custom-button" onClick="translateXML()">Build XML</div>
-          </div>
-        </div>  
+        <div id="input-file"></div>
+      </div>
+
+      <div class="item">
         <textarea readonly="readonly" id="output-file"></textarea>
       </div>
 
-      <div id="item">
-        <div class="button-row">
-          <div class="custom-button" onClick="saveXML()">Save Data Exchange XML</div>
+      <div class="item">
+        <div class="output-row">
+          <div class="row-item">Output file: <input type="text" id="output-file-name"></input></div>
+          <div class="row-item button-bottom">
+            <div class="custom-button" onClick="saveXML()">Save XML</div>
+          </div>
         </div>
       </div>
     </div>

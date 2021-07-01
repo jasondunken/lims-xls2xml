@@ -21,14 +21,12 @@ function translateXML() {
   window.api.send("translateXLS", {
     colNames: inputData.colNames,
     colData: inputData.colData,
-    importType: this.document.getElementById("import-type").value,
   });
 }
 
 function saveXML() {
   // TODO validate name
   outputData.filename = document.getElementById("output-file-name").value;
-  outputData.extension = ".xml";
   window.api.send("saveFile", outputData);
 }
 

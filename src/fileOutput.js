@@ -2,12 +2,11 @@ const { dialog } = require("electron");
 const fs = require("fs");
 
 function saveFile(window, data) {
-  const filename = `${data.filename}_${getTimestamp()}${data.extension}`;
   dialog
     .showSaveDialog(window, {
-      defaultPath: filename,
-      properties: ["showHiddenFiles", "createDirectory"],
-      filters: [{ name: "All Files", extensions: ["xml"] }],
+      defaultPath: data.filename,
+      properties: ["showHiddenFiles"],
+      filters: [{ name: "", extensions: ["xml"] }],
     })
     .then((result) => {
       if (!result.canceled) {
@@ -16,7 +15,7 @@ function saveFile(window, data) {
             if (err) {
               window.webContents.send("error", err);
             } else {
-              window.webContents.send("info", `${filename} saved to`);
+              window.webContents.send("info", `${data.filename} saved to`);
               window.webContents.send("info", result.filePath);
             }
           });
