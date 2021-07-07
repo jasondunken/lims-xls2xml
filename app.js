@@ -25,6 +25,7 @@ function createWindow() {
   });
   appWindow.loadFile(path.join(__dirname, "src/index.html"));
   // appWindow.webContents.openDevTools();
+  appWindow.setMenuBarVisibility(false);
 }
 
 app.whenReady().then(createWindow); // passing the function as a callback, not the return of the function
