@@ -28,6 +28,7 @@
     "forge": {
       "packagerConfig": {
         "name": "lims_xls2xml",
+        "icon": "favicon.ico",
         "asar": true
       },
       "makers": [
@@ -36,6 +37,7 @@
           "config": {
             "name": "lims_xls2xml",
             "setupExe": "LIMS-XLS-CONVERTER.exe",
+            "setupIcon": "favicon.ico",
             "noMsi": true
           }
         },

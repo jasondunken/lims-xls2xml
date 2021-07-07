@@ -4,7 +4,7 @@ const toXML = require("to-xml").toXML;
 const formatXML = require("xml-formatter");
 
 const xmlVersion = "1.0";
-const xmlEncoding = "utf-16";
+const xmlEncoding = "utf-8";
 
 function loadFile(window, data) {
   // TODO error checking
