@@ -85,7 +85,7 @@ function translateXLS(window, data) {
     buildToXMLObj(artObj, toXMLObj);
     toXMLObjs.push(formatXML(toXML(toXMLObj)));
   }
-  const xmlOutput = `${header}<list>\n${toXMLObjs.join("\n")}\n</list>`;
+  const xmlOutput = `${header}<List>\n${toXMLObjs.join("\n")}\n</List>`;
   window.webContents.send("outputData", { xmlOutput });
 
   // to-xml example
