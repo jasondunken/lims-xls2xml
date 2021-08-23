@@ -1,6 +1,6 @@
 {
   "name": "lims_xls2xml",
-  "version": "1.0.0",
+  "version": "0.1.3",
   "main": "app.js",
   "author": "@epa.gov",
   "description": "LIMS .xls to .xml converter",
