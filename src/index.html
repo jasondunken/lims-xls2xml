@@ -8,9 +8,9 @@
   <body>
     <div class="content">
       <div class="item">
-        <div class="input-row">
+        <div id="input-row">
           <div class="row-item">Input file: <span id="input-file-name">No file loaded</span></div>
-          <div class="row-item button-bottom">
+          <div class="row-item">
             <label for="file-upload" class="custom-button">Upload Excel file</label>
               <input
                 id="file-upload"
@@ -20,7 +20,7 @@
                 onChange="loadFile()"
               />
           </div>
-          <div class="row-item button-bottom">
+          <div class="row-item">
             <div class="custom-button" onClick="translateXML()">Build XML</div>
           </div>
         </div>
@@ -35,9 +35,9 @@
       </div>
 
       <div class="item">
-        <div class="output-row">
+        <div id="output-row">
           <div class="row-item">Output file: <input type="text" id="output-file-name"></input></div>
-          <div class="row-item button-bottom">
+          <div class="row-item">
             <div class="custom-button" onClick="saveXML()">Save XML</div>
           </div>
         </div>

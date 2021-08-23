@@ -112,6 +112,10 @@ function buildToXMLObj(article, toXMLObj) {
       root = root[parameterParent[0]];
       parameterParent = parameterParent.slice(1);
     }
+    // if the value if null or undefined  make it an empty string
+    if (parameter.value == "null" || parameter.value == "undefined") {
+      parameter.value = "";
+    }
     root[`@${parameter.parameter}`] = parameter.value;
   }
 }

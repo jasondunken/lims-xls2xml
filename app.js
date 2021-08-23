@@ -11,16 +11,16 @@ let appWindow = null;
 
 function createWindow() {
   appWindow = new BrowserWindow({
-    width: 900,
-    height: 720,
+    width: 720,
+    height: 480,
+    minWidth: 720,
+    minHeight: 480,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
       enableRemoteModule: false,
       preload: path.join(__dirname, "preload.js"),
     },
-    resizable: false,
-    // frame: false,
     icon: path.join(__dirname, "src/favicon.ico"),
   });
   appWindow.loadFile(path.join(__dirname, "src/index.html"));
