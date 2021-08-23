@@ -29,6 +29,13 @@ function translateXLS(window, data) {
   const elements = [];
   for (let name of data.colNames) {
     name = name.split("--");
+    if (name.length < 2) {
+      window.webContents.send("outputData", {
+        xmlOutput:
+          "Invalid file header. Header values must be in the format: child--root.parent...",
+      });
+      return;
+    }
     const element = {};
     element["parameter"] = name[0];
     element["parent"] = name[1].split(".").slice(2);
