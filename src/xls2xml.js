@@ -57,6 +57,7 @@ window.api.receive("outputData", (data) => {
 
 window.api.receive("error", (error) => {
     console.log("ERROR: ", error);
+    alert(`ERROR</br>${error}`);
 });
 
 window.api.receive("info", (info) => {

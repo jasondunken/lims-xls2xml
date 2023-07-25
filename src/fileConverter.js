@@ -9,7 +9,13 @@ const xmlEncoding = "utf-8";
 function loadFile(window, data) {
     // TODO error checking
     let path = data.path;
-    const workbook = XLSX.readFile(path);
+    let workbook = null;
+    try {
+        workbook = XLSX.readFile(path);
+    } catch (e) {
+        window.webContents.send("error", e);
+        return;
+    }
     const wsName = workbook.SheetNames[0];
     const wsData = XLSX.utils.sheet_to_json(workbook.Sheets[wsName], {
         header: 1,
