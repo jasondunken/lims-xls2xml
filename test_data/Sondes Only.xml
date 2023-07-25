@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List>
+  <GeneralBusiness.Asset AssetId="754" AssetNumber="A36679">
+    <Facility Name="AWBERC" />
+  </GeneralBusiness.Asset>
+  <GeneralBusiness.Asset AssetId="755" AssetNumber="A36681">
+    <Facility Name="AWBERC" />
+  </GeneralBusiness.Asset>
+</List>

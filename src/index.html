@@ -1,13 +1,47 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>LimsXlsToXml</title>
-  <base href="./">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LIMS XLS to XML</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="xls2xml.js"></script>
+  </head>
+  <body>
+    <div class="content">
+      <div class="item">
+        <div id="input-row">
+          <div class="row-item">Input file: <span id="input-file-name">No file loaded</span></div>
+          <div class="row-item">
+            <label for="file-upload" class="custom-button">Upload Excel file</label>
+              <input
+                id="file-upload"
+                type="file"
+                accept=".xls, .xlsx"
+                name="files[]"
+                onChange="loadFile()"
+              />
+          </div>
+          <div class="row-item">
+            <div class="custom-button" onClick="translateXML()">Build XML</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div id="input-file"></div>
+      </div>
+
+      <div class="item">
+        <textarea readonly="readonly" id="output-file"></textarea>
+      </div>
+
+      <div class="item">
+        <div id="output-row">
+          <div class="row-item">Output file: <input type="text" id="output-file-name"></input></div>
+          <div class="row-item">
+            <div class="custom-button" onClick="saveXML()">Save XML</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

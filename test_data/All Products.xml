@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="" DisplayName="Not specified" InventoryRequiresContainer="false" IsPurchased="true" Name="Not specified" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="1.000000" Color="" Description="50 mL conical polyproylene tube" DisplayName="50mL PP tube" InventoryRequiresContainer="false" IsPurchased="true" Name="50mL PP tube" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="each" Name="Each" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="" DisplayName="Coliphage" InventoryRequiresContainer="false" IsPurchased="true" Name="Coliphage" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="true">
+    <BasisQuantityUnit Abbreviation="item" Name="Item" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="4.000000" Color="" Description="Acetonitrile" DisplayName="Acetonitrile" InventoryRequiresContainer="false" IsPurchased="true" Name="Acetonitrile" PartNumber="A955" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="L" Name="Liter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="Unspecified volume polyprolylene tube, typically &lt; or = 2.0 mL with a snap top." DisplayName="microcentrifuge tube" InventoryRequiresContainer="false" IsPurchased="true" Name="microcentrifuge tube" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="1000.000000" Color="" Description="Citric acid" DisplayName="Citric acid" InventoryRequiresContainer="false" IsPurchased="true" Name="Citric acid" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mg" Name="milligram" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="500.000000" Color="" Description="Ammonium Acetate" DisplayName="Ammonium Acetate" InventoryRequiresContainer="false" IsPurchased="true" Name="Ammonium Acetate" PartNumber="A639" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="g" Name="grams" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="1.200000" Color="" Description="24 PFAS Target Source Standard Mix 2.000 ug/ml" DisplayName="PFAC24PAR" InventoryRequiresContainer="false" IsPurchased="true" Name="PFAC24PAR" PartNumber="PFAC24PAR" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="1000.000000" Color="" Description="Trizma preset crystals, pH 7.0. A premixed blend of Tris [Tris(hydroxymethyl)aminomethane]&#xD;&#xA;and Tris HCL [Tris(hydroxymethyl)aminomethane hydrochloride]." DisplayName="Trizma pH 7" InventoryRequiresContainer="false" IsPurchased="true" Name="Trizma pH 7" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mg" Name="milligram" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="" DisplayName="0.45 micron filter" InventoryRequiresContainer="false" IsPurchased="true" Name="0.45 micron filter" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="2000.000000" Color="" Description="" DisplayName="2-chloroacetamide" InventoryRequiresContainer="false" IsPurchased="true" Name="2-chloroacetamide" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mg" Name="milligram" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="100 mL high density polyethylene bottle, narrow or wide mouth, transparent or amber" DisplayName="100mL HDPE" InventoryRequiresContainer="false" IsPurchased="true" Name="100mL HDPE" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="1.000000" Color="" Description="15 mL conical polypropylene tube" DisplayName="15mL PP tube" InventoryRequiresContainer="false" IsPurchased="true" Name="15mL PP tube" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="each" Name="Each" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="1.200000" Color="" Description="23 mass labelled PFAS Surrogate/IS Source Standard Mix 1.000 ug/ml" DisplayName="MPFAC24ES" InventoryRequiresContainer="false" IsPurchased="true" Name="MPFAC24ES" PartNumber="MPFAC24ES" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="1.000000" Color="" Description="250 mL high density polyethylene, narrow or wide necked, transparent or amber" DisplayName="250mL HDPE" InventoryRequiresContainer="false" IsPurchased="true" Name="250mL HDPE" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="each" Name="Each" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="10^12 PFU/ml" DisplayName="MS2 stock for spike cocktail" InventoryRequiresContainer="false" IsPurchased="true" Name="MS2 stock for spike cocktail" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="true">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="4.000000" Color="" Description="" DisplayName="Methanol" InventoryRequiresContainer="false" IsPurchased="true" Name="Methanol" PartNumber="A454" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="L" Name="Liter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="1.200000" Color="" Description="HFPO-DA source standard 50.00 ug/ml" DisplayName="HFPO-DA" InventoryRequiresContainer="true" IsPurchased="true" Name="HFPO-DA" PartNumber="HFPO-DA" ProductCode="" SKUNumber="" Texture="" TrackInventory="true">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup Name="LTRD PFAS Stock Standards" />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="1000.000000" Color="" Description="" DisplayName="Sodium citrate" InventoryRequiresContainer="false" IsPurchased="true" Name="Sodium citrate" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="true">
+    <BasisQuantityUnit Abbreviation="mg" Name="milligram" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="1.000000" Color="" Description="500 mL high density polyethylene bottle, narrow or wide necked, transparent or amber" DisplayName="500mL HDPE" InventoryRequiresContainer="false" IsPurchased="true" Name="500mL HDPE" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="1.200000" Color="" Description="M3HFPO-DA source standard 50.00 ug/ml" DisplayName="M3HFPO-DA" InventoryRequiresContainer="false" IsPurchased="true" Name="M3HFPO-DA" PartNumber="M3HFPO-DA" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup Name="LTRD PFAS Stock Standards" />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="10.000000" Color="" Description="PFAS Surrogate/IS Spiking Solution" DisplayName="24ES-IDS" InventoryRequiresContainer="false" IsPurchased="false" Name="24ES-IDS" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="1.000000" Color="" Description="primary dilution standard for mass labelled surrogate/IS" DisplayName="M3HFPO-DA PDS" InventoryRequiresContainer="false" IsPurchased="false" Name="M3HFPO-DA PDS" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup Name="LTRD PFAS Stock Standards" />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="1.000000" Color="" Description="primary dilution standard for HFPO-DA standard preparation" DisplayName="HFPO-DA PDS" InventoryRequiresContainer="false" IsPurchased="false" Name="HFPO-DA PDS" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup Name="LTRD PFAS Stock Standards" />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="5.000000" Color="" Description="neat standard" DisplayName="1H,1H-Perfluoroheptan-1-ol" InventoryRequiresContainer="false" IsPurchased="true" Name="1H,1H-Perfluoroheptan-1-ol" PartNumber="sc-259028" ProductCode="" SKUNumber="" Texture="" TrackInventory="true">
+    <BasisQuantityUnit Abbreviation="g" Name="grams" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="10.000000" Color="" Description="PFAS standard mixture spiking solution" DisplayName="24PAR-IDS" InventoryRequiresContainer="false" IsPurchased="false" Name="24PAR-IDS" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="1000 mL Polypropylene Bottle" DisplayName="1000mL PP" InventoryRequiresContainer="false" IsPurchased="true" Name="1000mL PP" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="" DisplayName="300µL LC Vial" InventoryRequiresContainer="false" IsPurchased="true" Name="300µL LC Vial" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="uL" Name="microliter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="" DisplayName="15mL Tube" InventoryRequiresContainer="false" IsPurchased="true" Name="15mL Tube" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="false">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="Acetone" DisplayName="Acetone" InventoryRequiresContainer="true" IsPurchased="true" Name="Acetone" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="true">
+    <BasisQuantityUnit Abbreviation="L" Name="Liter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="Magnesium Carbonate" DisplayName="MgCO3" InventoryRequiresContainer="true" IsPurchased="true" Name="MgCO3" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="true">
+    <BasisQuantityUnit Abbreviation="g" Name="grams" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="HCl, Reagent Grade" DisplayName="Hydrochloric Acid" InventoryRequiresContainer="true" IsPurchased="true" Name="Hydrochloric Acid" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="true">
+    <BasisQuantityUnit Abbreviation="L" Name="Liter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="Chlorophyll-a Standard" DisplayName="Chlorophyll a" InventoryRequiresContainer="true" IsPurchased="true" Name="Chlorophyll a" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="true">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="90% Ace/10% MgCO3 HPW" DisplayName="BAAS" InventoryRequiresContainer="false" IsPurchased="false" Name="BAAS" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="true">
+    <BasisQuantityUnit Abbreviation="L" Name="Liter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="" DisplayName="MgCO3 HPW" InventoryRequiresContainer="true" IsPurchased="false" Name="MgCO3 HPW" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="true">
+    <BasisQuantityUnit Abbreviation="L" Name="Liter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="" DisplayName="0.1N HCl" InventoryRequiresContainer="true" IsPurchased="false" Name="0.1N HCl" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="true">
+    <BasisQuantityUnit Abbreviation="L" Name="Liter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="Density 1.651g/mL" Description="1H, 1H, 2H, 2H-Perfluoro-1-octanol" DisplayName="6:2 FTOH (370533-5G)" InventoryRequiresContainer="true" IsPurchased="true" Name="6:2 FTOH" PartNumber="" ProductCode="370533-5G" SKUNumber="112639" Texture="" TrackInventory="true">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup Name="LTRD PFAS Stock Standards" />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="50 ug/mL in isooctane" DisplayName="8:2 FTAcr" InventoryRequiresContainer="false" IsPurchased="true" Name="8:2 FTAcr" PartNumber="1H,1H,2H,2H-Perfluorodecyl acrylate" ProductCode="" SKUNumber="27905-45-9" Texture="" TrackInventory="true">
+    <BasisQuantityUnit Abbreviation="mL" Name="Milliliter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="Sodium Bicarbonate" DisplayName="NaHCO3" InventoryRequiresContainer="true" IsPurchased="true" Name="NaHCO3" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="true">
+    <BasisQuantityUnit Abbreviation="g" Name="grams" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+  <GeneralBusiness.Product Active="true" BasisQuantity="" Color="" Description="10g/L NaHCO3" DisplayName="10g/L NaHCO3" InventoryRequiresContainer="true" IsPurchased="false" Name="10g/L NaHCO3" PartNumber="" ProductCode="" SKUNumber="" Texture="" TrackInventory="true">
+    <BasisQuantityUnit Abbreviation="L" Name="Liter" />
+    <ProductGroup />
+  </GeneralBusiness.Product>
+</List>

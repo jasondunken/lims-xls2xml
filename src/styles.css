@@ -1,8 +1,119 @@
-/* You can add global styles to this file, and also import other style files */
-html, 
 body {
-    padding: 0;
     margin: 0;
-    background: gainsboro;
-    max-height: 100vh;
+    padding: 0;
+    background-color: lightgoldenrodyellow;
+}
+
+.content {
+    padding: 0 0.5rem;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 16vh 34vh 34vh 16vh;
+}
+
+.item {
+    display: grid;
+}
+
+#input-row,
+#output-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    column-gap: 0.5rem;
+}
+
+#output-row {
+    grid-template-columns: 1fr auto;
+}
+
+.row-item {
+    display: grid;
+    align-items: center;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-button {
+    border-radius: 5px;
+    width: 20vw;
+    color: black;
+    background-color: lightsteelblue;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    height: 2rem;
+}
+
+.custom-button:hover {
+    background-color: lightgray;
+}
+
+#input-file,
+#output-file {
+    overflow-y: auto;
+    overflow-x: auto;
+    background-color: lightsteelblue;
+}
+
+#input-file {
+    border: 1px solid gray;
+}
+
+div > table > thead > tr > th {
+    padding: 0.5rem;
+    background-color: goldenrod;
+}
+
+div > table {
+    text-align: center;
+}
+
+textarea {
+    resize: none;
+}
+
+select {
+    cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: rgb(179, 179, 179);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px lightgrey;
+    cursor: pointer;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: gray;
+    cursor: pointer;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: gray;
+}
+
+/* creates a new styling context */
+.example {
+    display: flow-root;
+}
+
+/* selects all but the first direct child */
+.example > * + * {
+    margin-top: 1rem;
 }
