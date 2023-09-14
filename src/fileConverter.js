@@ -93,6 +93,9 @@ function translateXLS(window, data) {
     const toXMLObjs = [];
     for (let artObj of artObjs) {
         const toXMLObj = {};
+        if (artObj === undefined) {
+            continue;
+        }
         toXMLObj[artObj.root] = {};
         buildToXMLObj(artObj, toXMLObj);
         toXMLObjs.push(formatXML(toXML(toXMLObj)));
